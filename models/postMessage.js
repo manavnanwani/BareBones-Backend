@@ -3,12 +3,17 @@ import mongoose from "mongoose";
 const postSchema = mongoose.Schema({
   title: String,
   message: String,
+  name: String,
   creator: String,
-  tags: [String],
+  subReddit: String,
   selectedFile: String,
-  likeCount: {
-    type: Number,
-    default: 0,
+  upvotes: {
+    type: [String],
+    default: [],
+  },
+  downvotes: {
+    type: [String],
+    default: [],
   },
   createdAt: {
     type: Date,
